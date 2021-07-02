@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fun Zone</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <link rel="stylesheet" href="index.css">
+     <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    </head>
+  <body >
+    <div class="separator" id = "team" style = " padding-top : 1%;">
+        <h1 style = "background : #bad7df; margin-bottom: 5%;">Projects(games) based upon DSA and Javascript</h1>
+    
+     <div class="container" >
+        <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-lg-4 card-container">
+                <div class="card card-flip">
+                    <div class="front card-block">
+                        <img src="sorting-visualizer-1.png" class="card-img-top" alt="sorting visualizer image image">
+                        
+                        <h3 class="card-title">Sorting Visualizer</h3>
+                        <h6 class="card-subtitle text-muted">(DSA, HTML, CSS, Javascript, React.js)</h6>
+                        
+                    </div>
+                    <div class="back card-block">
+                        <p style = " font-size : 1.2rem; margin-top : 5%;">
+                            • A React application for visualizing sorting algorithms <br>
+                        • Implemented Merge Sort, Quick Sort, Bubble Sort and Heap Sort <br>
+                            • It randomly generates an array of a given size by the user <br> 
+                             and shows its sorting in varying speeds based upon size <br>
+                            • UI has been built by div and animations.
+                        </p>
+                        <a href="https://dev-raj-kumar.github.io/Sorting-Visualizer/" target="_blank" class="btn btn-outline-primary">Website (click)</a>
+                    </div>
+                </div>
+            </div>
+               <div class="col-xs-12 col-sm-6 col-lg-4 card-container" >
+                    <div class="card card-flip">
+                        <div class="front card-block">
+                            <img src="sudoku.png" class="card-img-top" alt="Sudoku image">
+                            <h4 class="card-title">Sudoku Challenger</h4>
+                             <h6 class="card-subtitle text-muted">(DSA, HTML, CSS, Javascript)</h6>
+                        </div>
+                        <div class="back card-block">
+                            <p style = " font-size : 1.2rem; margin-top : 5%;">
+                                • A javaScript application which gives sudoku of different difficulties to solve <br>
+                                • user can choose between easy, medium, hard and random, and fill the empty cells <br>
+                                • feature for verifying and getting the solution based upon the backtracking algorithm <br>
+                                • UI has been built with HTML div tag
+                            </p>
+                            <a href="https://dev-raj-kumar.github.io/Sudoku/" target="_blank" class="btn btn-outline-primary">Website (Click)</a>
+                        </div>
+                    </div>
+               </div>
+            
+            <div class="col-xs-12 col-sm-6 col-lg-4 card-container">
+                <div class="card card-flip">
+                    <div class="front card-block">
+                        <img src="snake.png" class="card-img-top" alt="Snake image">
+                        <h4 class="card-title">Snake game</h4>
+                        <h6 class="card-subtitle text-muted">(DSA, HTML, CSS, Javascript)</h6>
+                    </div>
+                    <div class="back card-block">
+                        <p style = " font-size : 1.2rem; margin-top : 5%;">
+                            • A traditional Snake game in which each time the snake eats the food, the score increment by one <br>
+                            • The speed of the snake increases gradually as your point increases. <br>
+                            • When the snake collides with the boundary wall game is over <br>
+                            • It is implemented with array as Data Structure and the UI is build over HTML canvas.
+                        </p>
+                        <a href="https://dev-raj-kumar.github.io/Snake-Game/" target="_blank" class="btn btn-outline-primary">Website (click)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <script type="text/javascript">
+    
+
+$(document).ready(function() {
+  var front = document.getElementsByClassName("front");
+  var back = document.getElementsByClassName("back");
+
+  var highest = 0;
+  var absoluteSide = "";
+
+  for (var i = 0; i < front.length; i++) {
+    if (front[i].offsetHeight > back[i].offsetHeight) {
+      if (front[i].offsetHeight > highest) {
+        highest = front[i].offsetHeight;
+        absoluteSide = ".front";
+      }
+    } else if (back[i].offsetHeight > highest) {
+      highest = back[i].offsetHeight;
+      absoluteSide = ".back";
+    }
+  }
+  $(".front").css("height", highest);
+  $(".back").css("height", highest);
+  $(absoluteSide).css("position", "absolute");
+});
+
+   </script>
+</body>
+</html>
